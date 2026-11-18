@@ -1,4 +1,4 @@
-"""Calcul de la moyenne pondérée d'un élève."""
+"""fonction de Calcul de la moyenne pondérée d'un élève."""
 import csv
 
 def moyenne_ponderee(notes):
@@ -6,8 +6,8 @@ def moyenne_ponderee(notes):
 
     notes : liste de tuples (note, coefficient).
     """
-    if not notes:
-        raise ValueError("La liste de notes est vide")
+    if not notes:qui
+    aise ValueError("La liste de notes est vide")
     total = sum(note * coef for note, coef in notes)
     somme_coefs = sum(coef for _, coef in notes)
     return round(total / somme_coefs, 2)
