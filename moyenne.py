@@ -6,8 +6,8 @@ def moyenne_ponderee(notes):
 
     notes : liste de tuples (note, coefficient).
     """
-    if not notes:qui
-    aise ValueError("La liste de notes est vide")
+    if not notes:
+     raise ValueError("La liste de notes est vide")
     total = sum(note * coef for note, coef in notes)
     somme_coefs = sum(coef for _, coef in notes)
     return round(total / somme_coefs, 2)
@@ -23,3 +23,23 @@ def lire_notes(chemin):
 if __name__ == "__main__":
     notes = lire_notes("donnees/notes.csv")
     print("Moyenne :", moyenne_ponderee(notes))
+def mention(moyenne):
+    if moyenne >= 16:
+        return "Très bien"
+    elif moyenne >= 14:
+        return "Bien"
+    elif moyenne >= 12:
+        return "Assez bien"
+    elif moyenne >= 10:
+        return "Passable"
+    else:
+        return "Insuffisant"
+    from moyenne import mention
+
+   
+def test_mention():
+    assert mention(16) == "Très bien"
+    assert mention(14) == "Bien"
+    assert mention(12) == "Assez bien"
+    assert mention(10) == "Passable"
+    assert mention(8) == "Insuffisant" 
